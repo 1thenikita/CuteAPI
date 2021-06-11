@@ -1,8 +1,11 @@
+# coding: utf-8
+# Импортирует поддержку UTF-8.
+from __future__ import unicode_literals
 from flask import Flask, redirect, jsonify, make_response
 import requests
 import werkzeug
 
-app = Flask(__name__, static_url_path="")
+app = Flask(__name__)
 
 
 @app.errorhandler(400)
@@ -21,5 +24,5 @@ def get_cute_gif():
     return redirect(r.json()['url'], code=302)
 
 
-if __name__ == '__main__':
-    app.run(port=80)
+# if __name__ == '__main__':
+#     app.run(port=80)
