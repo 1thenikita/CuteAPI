@@ -24,5 +24,5 @@ def get_cute_gif():
     return redirect(r.json()['url'], code=302)
 
 
-# if __name__ == '__main__':
-#     app.run(port=80)
+if __name__ == '__main__':
+    app.run()
