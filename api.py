@@ -1,10 +1,7 @@
 from flask import Flask, redirect, jsonify, make_response
 import requests
 
-from flask_httpauth import HTTPBasicAuth
-
 app = Flask(__name__, static_url_path="")
-auth = HTTPBasicAuth()
 
 @app.errorhandler(400)
 def not_found(error):
