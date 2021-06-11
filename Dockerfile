@@ -5,6 +5,6 @@ COPY . /app
 
 EXPOSE 5000
 
-RUN pip install Flask
+RUN pip install -r requirements.txt
 RUN pip install requests
 CMD FLASK_APP=api.py flask run --host="::"
