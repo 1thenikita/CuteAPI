@@ -1,15 +1,11 @@
-# coding: utf-8
-# Импортирует поддержку UTF-8.
-from __future__ import unicode_literals
 from flask import Flask, redirect, jsonify, make_response
 import requests
-import werkzeug
 
 app = Flask(__name__)
 
 
 @app.errorhandler(400)
-def not_found(error):
+def bad_request(error):
     return make_response(jsonify({'Error': 'Bad request'}), 400)
 
 
@@ -20,7 +16,7 @@ def not_found(error):
 
 @app.route('/gif/cute', methods=['GET'])
 def get_cute_gif():
-    r = requests.get("https://evergene.io/api/hug")
+    r = requests.get('https://evergene.io/api/hug')
     return redirect(r.json()['url'], code=302)
 
 
